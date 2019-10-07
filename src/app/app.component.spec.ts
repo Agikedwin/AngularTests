@@ -23,7 +23,7 @@ describe('AppComponent', () => {
   it(`should have as title 'angular-unit-testing'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('angular-unit-testing');
+    expect(app.title).toEqual('angular-unit-testing!');
   });
 
   it('should render title in a h1 tag', () => {
@@ -31,5 +31,26 @@ describe('AppComponent', () => {
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('h1').textContent).toContain('Welcome to angular-unit-testing!');
+  });
+
+  it('should render sub title in h3', ()=>{
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('h3').textContent).toContain('sub title');
+  })
+
+  describe('Hello world', () => {
+
+    let expected = "";
+
+    beforeEach(() => {
+        expected = "Hello world!";
+    });
+
+    afterEach(() => {
+        expected = "";
+    });
+
   });
 });
